@@ -7,8 +7,9 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
+import javax.inject.Inject
 
-class NetworkRepository constructor(
+class NetworkRepository @Inject constructor(
     val service: ApiService
 ) {
 

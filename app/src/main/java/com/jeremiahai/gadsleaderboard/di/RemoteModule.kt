@@ -1,4 +1,4 @@
-package com.jeremiahai.gadsleaderboard.dependencyInjection
+package com.jeremiahai.gadsleaderboard.di
 
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

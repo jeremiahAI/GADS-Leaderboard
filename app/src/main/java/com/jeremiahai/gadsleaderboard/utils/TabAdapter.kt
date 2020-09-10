@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.jeremiahai.gadsleaderboard.LeaderBoardFragment
 import com.jeremiahai.gadsleaderboard.R
+import com.jeremiahai.gadsleaderboard.leaderBoard.LeaderBoardFragment
 
 val POSITION: String? = "position"
 

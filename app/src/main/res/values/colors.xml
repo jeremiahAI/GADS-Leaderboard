@@ -5,4 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="textGrey">#5E5E5E</color>
 
+    <color name="red_error">#EE3030</color>
+    <color name="transparent_red_error">#F9EEF3</color>
+
 </resources>

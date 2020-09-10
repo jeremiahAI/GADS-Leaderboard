@@ -1,10 +1,11 @@
-package com.jeremiahai.gadsleaderboard
+package com.jeremiahai.gadsleaderboard.leaderBoard
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.jeremiahai.gadsleaderboard.R
 
 class LeaderBoardFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
