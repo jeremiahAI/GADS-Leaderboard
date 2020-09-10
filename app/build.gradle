@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
@@ -84,6 +85,10 @@ dependencies {
 
     //ProgressBar
     implementation 'com.github.d-max:spots-dialog:0.7@aar'
+
+    //Image loading
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
 
 }
