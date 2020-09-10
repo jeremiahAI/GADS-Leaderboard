@@ -2,15 +2,15 @@ package com.jeremiahai.gadsleaderboard
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
-        Handler().postDelayed({ navigateToMain() }, 5000)
+        Handler().postDelayed({ navigateToMain() }, 5)
     }
 
     private fun navigateToMain() {
