@@ -1,10 +1,12 @@
 package com.jeremiahai.gadsleaderboard.leaderBoard
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.jeremiahai.gadsleaderboard.R
+import com.jeremiahai.gadsleaderboard.SubmitActivity
 import com.jeremiahai.gadsleaderboard.utils.TabAdapter
 import com.jeremiahai.gadsleaderboard.utils.showError
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,6 +57,9 @@ class LeaderBoardActivity : AppCompatActivity() {
         adapter = TabAdapter(tabLayout, supportFragmentManager)
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
+        submitButton.setOnClickListener {
+            startActivity(Intent(this, SubmitActivity::class.java))
+        }
 
     }
 
