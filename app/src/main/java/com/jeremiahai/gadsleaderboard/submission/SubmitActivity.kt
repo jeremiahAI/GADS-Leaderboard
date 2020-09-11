@@ -33,6 +33,7 @@ class SubmitActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_submit)
+        toolbar.setNavigationOnClickListener { onBackPressed() }
 
         setupViewModel()
         setupView()
