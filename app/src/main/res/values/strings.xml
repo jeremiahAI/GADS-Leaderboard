@@ -3,4 +3,9 @@
     <string name="skill_leaders">Skill Leaders</string>
     <string name="learning_leaders">Learning Leaders</string>
     <string name="leaderboard">LEADERBOARD</string>
+    <string name="google_africa_developer_scholarship"><b>Google</b> Africa \nDeveloper Scholarship</string>
+    <string name="first_name_bold"><b>First Name</b></string>
+    <string name="last_name_bold"><b>Last Name</b></string>
+    <string name="email_bold"><b>Email Address</b></string>
+    <string name="github_link_bold"><b>Project on GitHub (link)</b></string>
 </resources>

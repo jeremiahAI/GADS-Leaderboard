@@ -7,5 +7,9 @@
 
     <color name="red_error">#EE3030</color>
     <color name="transparent_red_error">#F9EEF3</color>
+    <color name="white">#FFF</color>
+    <color name="gadsYellow">#FD9F36</color>
+    <color name="black">#000000</color>
+    <color name="hintColorDark">#5D5D5D</color>
 
 </resources>
