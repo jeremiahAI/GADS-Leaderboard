@@ -2,6 +2,7 @@ package com.jeremiahai.gadsleaderboard.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.gson.JsonObject
 import com.jeremiahai.gadsleaderboard.data.model.GadsLearner
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +11,8 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class NetworkRepository @Inject constructor(
-    val service: ApiService
+    val gadsService: GadsApiService,
+    val googleService: GoogleDocsApiService
 ) {
 
     private suspend fun <ResponseType>
@@ -49,10 +51,19 @@ class NetworkRepository @Inject constructor(
 
 
     suspend fun getLearningLeaders(): LiveData<Resource<List<GadsLearner>>> {
-        return makeCall(service.getLearningLeaders())
+        return makeCall(gadsService.getLearningLeaders())
     }
 
     suspend fun getSkillIqLeaders(): LiveData<Resource<List<GadsLearner>>> {
-        return makeCall(service.getSkillIqLeaders())
+        return makeCall(gadsService.getSkillIqLeaders())
+    }
+
+    suspend fun submitDetails(
+        email: String,
+        firstName: String,
+        lastName: String,
+        githubLink: String
+    ): LiveData<Resource<JsonObject>> {
+        return makeCall(googleService.uploadToGoogleDocs(email, firstName, lastName, githubLink))
     }
 }

@@ -2,6 +2,7 @@ package com.jeremiahai.gadsleaderboard.submission
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +46,12 @@ class SubmitActivity : AppCompatActivity() {
                 }
                 yesButton.setOnClickListener {
                     confirmationDialog?.dismiss()
-                    viewModel.submit()
+                    viewModel.submit(
+                        emailEt.text.toString(),
+                        firstNameEt.text.toString(),
+                        lastNameEt.text.toString(),
+                        githubLinkEt.text.toString()
+                    )
                 }
             })
             .create()
@@ -55,8 +61,7 @@ class SubmitActivity : AppCompatActivity() {
             .create()
 
         nextBtn.setOnClickListener {
-
-            confirmationDialog?.show()
+            validateData()
         }
     }
 
@@ -84,12 +89,19 @@ class SubmitActivity : AppCompatActivity() {
 
 
                 statusDialog?.show()
-//                Handler().postDelayed({
-//                    if (dialog?.isShowing==true) dialog?.dismiss()
-//                },3000)
-
             }
         })
+    }
+
+
+    private fun validateData() {
+        if (
+            emailEt.text.isNullOrEmpty() ||
+            firstNameEt.text.isNullOrEmpty() ||
+            lastNameEt.text.isNullOrEmpty() ||
+            githubLinkEt.text.isNullOrEmpty()
+        ) Toast.makeText(this, "Please fill the form", Toast.LENGTH_SHORT).show()
+        else confirmationDialog?.show()
     }
 
 
