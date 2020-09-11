@@ -1,6 +1,5 @@
 package com.jeremiahai.gadsleaderboard.data
 
-import com.google.gson.JsonObject
 import com.jeremiahai.gadsleaderboard.data.model.GadsLearner
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
@@ -28,6 +27,6 @@ interface GoogleDocsApiService {
         @Field("entry.1877115667") firstName: String,
         @Field("entry.2006916086") lastName: String,
         @Field("entry.284483984") githubLink: String
-    ): Deferred<Response<JsonObject>>
+    ): Deferred<Response<String>>
 }
 

@@ -1,6 +1,7 @@
 package com.jeremiahai.gadsleaderboard.di
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.jeremiahai.gadsleaderboard.BuildConfig
 import com.jeremiahai.gadsleaderboard.data.GadsApiService
@@ -13,6 +14,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Qualifier
 import javax.inject.Singleton
@@ -38,7 +40,7 @@ class RemoteModule {
     @Provides
     @Singleton
     fun provideGson(): Gson {
-        return Gson()
+        return GsonBuilder().setLenient().create()
     }
 
     @Singleton
@@ -63,11 +65,12 @@ class RemoteModule {
     @Singleton
     @Provides
     @GdocsRetrofit
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(GOOGLE_DOCS_BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
@@ -75,11 +78,11 @@ class RemoteModule {
     @Singleton
     @Provides
     @GadsRetrofit
-    fun provideGadsRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideGadsRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(GADS_BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }

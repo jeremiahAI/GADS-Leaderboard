@@ -2,7 +2,6 @@ package com.jeremiahai.gadsleaderboard.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.gson.JsonObject
 import com.jeremiahai.gadsleaderboard.data.model.GadsLearner
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -63,7 +62,7 @@ class NetworkRepository @Inject constructor(
         firstName: String,
         lastName: String,
         githubLink: String
-    ): LiveData<Resource<JsonObject>> {
+    ): LiveData<Resource<String>> {
         return makeCall(googleService.uploadToGoogleDocs(email, firstName, lastName, githubLink))
     }
 }
