@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.jeremiahai.gadsleaderboard.LeaderBoardAdapter
 import com.jeremiahai.gadsleaderboard.R
 import com.jeremiahai.gadsleaderboard.data.model.GadsLearner
+import com.jeremiahai.gadsleaderboard.utils.LeaderBoardAdapter
 import com.jeremiahai.gadsleaderboard.utils.POSITION
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_leader_board.*
@@ -34,7 +34,11 @@ class LeaderBoardFragment : Fragment() {
     private fun setupViewModel(position: Int) {
         val observer = Observer<List<GadsLearner>> { learnersList ->
             leaderBoardRv.layoutManager = LinearLayoutManager(context)
-            leaderBoardRv.adapter = LeaderBoardAdapter(position, learnersList)
+            leaderBoardRv.adapter =
+                LeaderBoardAdapter(
+                    position,
+                    learnersList
+                )
         }
 
         viewModel.apply {

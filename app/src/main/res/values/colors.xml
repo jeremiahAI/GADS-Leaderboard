@@ -11,5 +11,6 @@
     <color name="gadsYellow">#FD9F36</color>
     <color name="black">#000000</color>
     <color name="hintColorDark">#5D5D5D</color>
+    <color name="darkGrey">#5D5D5D</color>
 
 </resources>

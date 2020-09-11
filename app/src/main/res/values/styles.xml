@@ -20,4 +20,9 @@
         <item name="android:focusable">true</item>
     </style>
 
+    <style name="outlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/gadsYellow</item>
+        <!--        <item name="strokeWidth">2dp</item>-->
+    </style>
+
 </resources>

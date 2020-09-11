@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubmitActivity"></activity>
+        <activity android:name=".submission.SubmitActivity"></activity>
         <activity android:name=".leaderBoard.LeaderBoardActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>

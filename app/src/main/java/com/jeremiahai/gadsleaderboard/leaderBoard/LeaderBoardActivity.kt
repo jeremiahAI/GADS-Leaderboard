@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.jeremiahai.gadsleaderboard.R
-import com.jeremiahai.gadsleaderboard.SubmitActivity
+import com.jeremiahai.gadsleaderboard.submission.SubmitActivity
 import com.jeremiahai.gadsleaderboard.utils.TabAdapter
 import com.jeremiahai.gadsleaderboard.utils.showError
 import dagger.hilt.android.AndroidEntryPoint

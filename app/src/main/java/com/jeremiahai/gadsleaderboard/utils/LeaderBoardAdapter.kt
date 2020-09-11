@@ -1,10 +1,11 @@
-package com.jeremiahai.gadsleaderboard
+package com.jeremiahai.gadsleaderboard.utils
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.jeremiahai.gadsleaderboard.R
 import com.jeremiahai.gadsleaderboard.data.model.GadsLearner
 import kotlinx.android.synthetic.main.leader_board_item.view.*
 
